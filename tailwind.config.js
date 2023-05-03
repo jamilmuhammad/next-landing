@@ -41,7 +41,13 @@ module.exports = {
         500: "#DDDDDD",
       },
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        bromoscene: "linear-gradient(to right bottom, rgba(43, 108, 176, 0.9), rgba(43, 108, 176, 0)), url('../public/assets/bg_about.jpg')",
+        playstore: "url('../public/assets/playstore.png')",
+        appstore: "url('../public/assets/appstore.png')",
+      },
+    },
   },
   variants: {
     extend: {

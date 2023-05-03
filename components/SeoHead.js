@@ -63,7 +63,7 @@ const SeoHead = (props) => {
       <meta name='image' property='og:image' content={meta.image} />
       {/* Twitter */}
       <meta name='twitter:card' content='summary_large_image' />
-      <meta name='twitter:site' content='@F2aldi' />
+      <meta name='twitter:site' content='@wigoindonesia' />
       <meta name='twitter:title' content={meta.title} />
       <meta name='twitter:description' content={meta.description} />
       <meta name='twitter:image' content={meta.image} />
@@ -90,7 +90,7 @@ const SeoHead = (props) => {
       <meta name='msapplication-TileColor' content='#F53838' />
       <meta
         name='msapplication-TileImage'
-        content='/favicon/ms-icon-144x144.png'
+        content='/favicon/wigoicon-144x144.png'
       />
       {/* Accent color on supported browser */}
       <meta name='theme-color' content='#F53838' />

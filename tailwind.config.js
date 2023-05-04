@@ -20,6 +20,11 @@ module.exports = {
     },
     colors: {
       transparent: "transparent",
+      primary: {
+        100: "var(--primary-100)",
+        500: "var(--primary-500)",
+        600: "var(--primary-600)",
+      },
       black: {
         500: "#4F5665",
         600: "#0B132A",

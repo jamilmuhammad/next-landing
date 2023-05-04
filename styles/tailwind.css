@@ -3,6 +3,12 @@
 @tailwind base;
 @tailwind components;
 
+:root {
+  --primary-100: #438EE0;
+  --primary-500: #1565bf;
+  --primary-600: #004FA5;
+}
+
 html {
   font-family: "Rubik", sans-serif;
 }
@@ -17,7 +23,7 @@ p {
   content: "";
   height: 2px;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  @apply w-0 bg-orange-500 left-1/2 block bottom-0 absolute;
+  @apply w-0 bg-primary-600 left-1/2 block bottom-0 absolute;
 }
 .animation-active:after {
   @apply left-0 w-full;
@@ -41,9 +47,10 @@ li.custom-list:before {
   @apply absolute block;
 }
 li.circle-check:before {
-  background-image: url("/assets/Icon/checklist.svg");
+  background-image: url("/assets/Icon/checklist-circle.svg");
   left: -0.7em;
   top: -0.4em;
+  background-color: var(--primary-100);
 }
 li.check:before {
   left: -0.5em;
@@ -59,7 +66,7 @@ li.check:before {
   @apply bg-gray-500;
 }
 .slick-dots .slick-active span {
-  @apply bg-orange-500 rounded-l-full rounded-r-full w-12;
+  @apply bg-primary-600 rounded-l-full rounded-r-full w-12;
 }
 
 /* purgecss end ignore */

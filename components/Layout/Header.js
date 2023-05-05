@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
 // Import react scroll
 import { Link as LinkScroll } from "react-scroll";
 
-import Button, { BUTTON_TYPE_CLASS } from "../misc/Button";
-import Image from "next/image";
+import Image from "next/future/image";
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState(null);
   const [scrollActive, setScrollActive] = useState(false);
+  const [navOpen, setNavOpen] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setScrollActive(window.scrollY > 20);
@@ -18,241 +17,132 @@ const Header = () => {
     <>
       <header
         className={
-          "fixed top-0 w-full z-30 backdrop-filter backdrop-blur-lg transition-all " +
-          (scrollActive ? " shadow-md pt-0" : " pt-4")
+          "fixed top-0 w-full z-30 transition-all " +
+          (scrollActive ? "bg-white-500 shadow-md pt-0" : "bg-white-500 lg:bg-transparent pt-2")
         }
       >
-        <nav className="sticky backdrop-filter backdrop-blur-lg max-w-screen-xl top-0 left-0 right-0 px-6 sm:px-8 lg:px-16 mx-auto grid grid-flow-col py-3 sm:py-4">
-          <div className="col-start-1 col-end-2 flex items-center">
+        <nav className="relative lg:bg-transparent max-w-screen-xl top-0 left-0 right-0 px-6 sm:px-8 lg:px-16 mx-auto flex flex-wrap py-3 sm:py-4">
+          <div className="order-0 flex justify-center items-center mr-2">
             <Image
-              src="/assets/logo_wigo.png"
-              width={105}
+              src={scrollActive ? "/assets/logo_wigo1.png" : "/assets/logo_wigo_w1.png"}
+              width={65}
               height={65}
-
+              className="hidden lg:inline-block "
               alt="Wigo Indonesia"
+              layout="raw"
+            />
+            <Image
+              src="/assets/logo_wigo1.png"
+              width={65}
+              height={65}
+              className="inline-block lg:hidden"
+              alt="Wigo Indonesia"
+              layout="raw"
             />
           </div>
-          <ul className="hidden lg:flex col-start-4 col-end-8 text-black-500  items-center">
-            <LinkScroll
-              activeClass="active"
-              to="about"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("about");
-              }}
-              className={
-                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "about"
-                  ? " text-primary-600 animation-active "
-                  : " text-black-500 hover:text-primary-600 a")
-              }
+          <div className="order-2 font-medium flex ml-auto items-center">
+            <button
+              id="show-button"
+              className="flex cursor-pointer items-center md:hidden md:order-1"
+              onClick={() => setNavOpen(!navOpen)}
             >
-              About
-            </LinkScroll>
-            <LinkScroll
-              activeClass="active"
-              to="feature"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("feature");
-              }}
-              className={
-                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "feature"
-                  ? " text-primary-600 animation-active "
-                  : " text-black-500 hover:text-primary-600 ")
-              }
-            >
-              Feature
-            </LinkScroll>
-            <LinkScroll
-              activeClass="active"
-              to="profile"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("profile");
-              }}
-              className={
-                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "profile"
-                  ? " text-primary-600 animation-active "
-                  : " text-black-500 hover:text-primary-600 ")
-              }
-            >
-              Profile
-            </LinkScroll>
-            <LinkScroll
-              activeClass="active"
-              to="testimoni"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("testimoni");
-              }}
-              className={
-                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "testimoni"
-                  ? " text-primary-600 animation-active "
-                  : " text-black-500 hover:text-primary-600 ")
-              }
-            >
-              Testimonial
-            </LinkScroll>
-          </ul>
-          <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
-            <Link href="/">
-              <a className="text-black-600 mx-2 sm:mx-4 capitalize tracking-wide hover:text-primary-600 transition-all">
-                Sign In
-              </a>
-            </Link>
-            <Button buttonType={BUTTON_TYPE_CLASS.base_outline}>Sign Up</Button>
+              {navOpen ? (
+                <svg className="h-6 fill-current" viewBox="0 0 20 20">
+                  <title>Menu Open</title>
+                  <polygon
+                    points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+                    transform="rotate(45 10 10)"
+                  />
+                </svg>
+              ) : (
+                <svg className="h-6 fill-current" viewBox="0 0 20 20">
+                  <title>Menu Close</title>
+                  <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z" />
+                </svg>
+              )}
+            </button>
+          </div>
+          <div className={`order-3 lg:order-1 overflow-hidden w-full md:max-h-full md:w-auto " + ${navOpen ? " max-h-[1000px] " : " max-h-0 "}`}>
+            <ul className=" lg:flex-row flex flex-col text-black-500  items-center">
+              <LinkScroll
+                activeClass="active"
+                to="about"
+                spy={true}
+                smooth={true}
+                duration={1000}
+                onSetActive={() => {
+                  setActiveLink("about");
+                }}
+                className={
+                  "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
+                  (activeLink === "about"
+                    ? " text-primary-600 animation-active "
+                    : " text-black-500 hover:text-primary-600 a")
+                }
+              >
+                About
+              </LinkScroll>
+              <LinkScroll
+                activeClass="active"
+                to="feature"
+                spy={true}
+                smooth={true}
+                duration={1000}
+                onSetActive={() => {
+                  setActiveLink("feature");
+                }}
+                className={
+                  "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
+                  (activeLink === "feature"
+                    ? " text-primary-600 animation-active "
+                    : " hover:text-primary-600 ") +
+                  (scrollActive ? " text-black-600 " : " text-black-600 lg:text-gray-400 ")
+                }
+              >
+                Feature
+              </LinkScroll>
+              <LinkScroll
+                activeClass="active"
+                to="profile"
+                spy={true}
+                smooth={true}
+                duration={1000}
+                onSetActive={() => {
+                  setActiveLink("profile");
+                }}
+                className={
+                  "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
+                  (activeLink === "profile"
+                    ? " text-primary-600 animation-active "
+                    : " hover:text-primary-600 ") +
+                  (scrollActive ? " text-black-600 " : " text-black-600 lg:text-gray-400 ")
+                }
+              >
+                Profile
+              </LinkScroll>
+              <LinkScroll
+                activeClass="active"
+                to="testimoni"
+                spy={true}
+                smooth={true}
+                duration={1000}
+                onSetActive={() => {
+                  setActiveLink("testimoni");
+                }}
+                className={
+                  "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
+                  (activeLink === "testimoni"
+                    ? " text-primary-600 animation-active "
+                    : " hover:text-primary-600 ") +
+                  (scrollActive ? " text-black-600 " : " text-black-600 lg:text-gray-400 ")
+                }
+              >
+                Testimonial
+              </LinkScroll>
+            </ul>
           </div>
         </nav>
       </header>
-      {/* Mobile Navigation */}
-
-      <nav className="fixed lg:hidden bottom-0 left-0 right-0 z-20 px-4 sm:px-8 shadow-t ">
-        <div className="bg-transparent sm:px-3">
-          <ul className="flex w-full justify-between items-center text-black-500">
-            <LinkScroll
-              activeClass="active"
-              to="about"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("about");
-              }}
-              className={
-                "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
-                (activeLink === "about"
-                  ? "  border-primary-600 text-primary-600"
-                  : " border-transparent")
-              }
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              About
-            </LinkScroll>
-            <LinkScroll
-              activeClass="active"
-              to="feature"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("feature");
-              }}
-              className={
-                "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
-                (activeLink === "feature"
-                  ? "  border-primary-600 text-primary-600"
-                  : " border-transparent ")
-              }
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                />
-              </svg>
-              Feature
-            </LinkScroll>
-            <LinkScroll
-              activeClass="active"
-              to="profile"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("profile");
-              }}
-              className={
-                "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
-                (activeLink === "profile"
-                  ? "  border-primary-600 text-primary-600"
-                  : " border-transparent ")
-              }
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              Profile
-            </LinkScroll>
-            <LinkScroll
-              activeClass="active"
-              to="testimoni"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("testimoni");
-              }}
-              className={
-                "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
-                (activeLink === "testimoni"
-                  ? "  border-primary-600 text-primary-600"
-                  : " border-transparent ")
-              }
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                />
-              </svg>
-              Testimonial
-            </LinkScroll>
-          </ul>
-        </div>
-      </nav>
-      {/* End Mobile Navigation */}
     </>
   );
 };

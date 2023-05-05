@@ -4,18 +4,18 @@ import { useRouter } from "next/router";
 
 // Default value for some meta data
 const defaultMeta = {
-  title: 'LaslesVPN',
-  siteName: 'LaslesVPN',
+  title: 'WIGO',
+  siteName: 'WIGO',
   description:
-    'Landing page VPN LaslesVPN Best VPN For Privacy, Country and Cheapest',
+    'Landing page WIGO Connecting The World of Tourism',
   // change base url of your web (without '/' at the end)
-  url: 'https://next-landing-vpn.vercel.app',
+  url: 'https://wigo-landing.vercel.app',
   type: 'website',
   robots: 'follow, index',
   // change with url of your image (recommended dimension = 1.91:1)
   // used in twitter, facebook, etc. card when link copied in tweet/status 
-  image: 'https://next-landing-vpn.vercel.app/assets/card-image.png',
-  author: 'Lorem Ipsum'
+  image: 'https://wigo-landing.vercel.app/assets/logo-wigo.png',
+  author: 'PT Jelajah Wisata Digital'
 };
 
 /**
@@ -61,12 +61,12 @@ const SeoHead = (props) => {
       <meta property='og:description' content={meta.description} />
       <meta property='og:title' content={meta.title} />
       <meta name='image' property='og:image' content={meta.image} />
-      {/* Twitter */}
-      <meta name='twitter:card' content='summary_large_image' />
-      <meta name='twitter:site' content='@wigoindonesia' />
-      <meta name='twitter:title' content={meta.title} />
-      <meta name='twitter:description' content={meta.description} />
-      <meta name='twitter:image' content={meta.image} />
+      {/* Facebook */}
+      <meta name='facebook:card' content='summary_large_image' />
+      <meta name='facebook:site' content='@wigoindonesia' />
+      <meta name='facebook:title' content={meta.title} />
+      <meta name='facebook:description' content={meta.description} />
+      <meta name='facebook:image' content={meta.image} />
       {meta.date && (
         <>
           <meta property='article:published_time' content={meta.date} />
@@ -90,7 +90,7 @@ const SeoHead = (props) => {
       <meta name='msapplication-TileColor' content='#F53838' />
       <meta
         name='msapplication-TileImage'
-        content='/favicon/wigoicon-144x144.png'
+        content='/favicon/mstile-150x150.png'
       />
       {/* Accent color on supported browser */}
       <meta name='theme-color' content='#F53838' />

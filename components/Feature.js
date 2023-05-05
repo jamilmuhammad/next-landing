@@ -5,11 +5,17 @@ import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
 import Link from "next/link";
 
-const features = [
-  "Powerfull online protection.",
-  "Easy to maintain transaction records",
-  "No specific time limits."
-]
+const features_app = [
+  "Get detailed recommendations for your trip",
+  "Pay for tickets online or offline securely",
+  "Get the most out of your tourism experience",
+];
+
+const features_dashboard = [
+  "Use QR Scanner for ticket validation",
+  "Access big data analytics",
+  "Enjoy our point of sale system",
+];
 
 const Feature = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
@@ -28,22 +34,22 @@ const Feature = () => {
               layout="responsive"
               quality={100}
               height={55}
-              width={45}
+              width={41}
             />
           </motion.div>
         </ScrollAnimationWrapper>
-        <ScrollAnimationWrapper>
+        <ScrollAnimationWrapper className="flex justify-center">
 
-          <motion.div className="flex flex-col items-end justify-center ml-auto w-full lg:w-9/12" variants={scrollAnimation}>
+          <motion.div className="flex flex-col items-start justify-center mr-auto w-full lg:w-9/12" variants={scrollAnimation}>
             <h3 className="text-3xl lg:text-4xl font-medium leading-relaxed text-black-600">
-              We Provide Payment Online Method
+              WIGO APP
             </h3>
             <p className="my-2 text-black-500">
-              Pengunjung dapat membeli tiket melalui platform WIGO
-              dan juga dapat membeli merchandise melalui QRIS.
+              Discover destinations, activities, accommodations, and dining options worldwide with
+              ease! Our interactive maps and guides make traveling a breeze.
             </p>
             <ul className="text-black-500 self-start list-inside">
-              {features.map((feature, index) => (
+              {features_app.map((feature, index) => (
                 <motion.li
                   className="relative custom-list flex flex-row"
                   custom={{ duration: 2 + index }}
@@ -77,18 +83,32 @@ const Feature = () => {
         </ScrollAnimationWrapper>
       </div>
       <div className="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-2 gap-8 p  y-8 my-12">
-        <ScrollAnimationWrapper>
+        <ScrollAnimationWrapper className="flex w-full justify-end">
+          <motion.div className="h-full w-full p-4" variants={scrollAnimation}>
+            <Image
+              src="/assets/wigo_dashboard.png"
+              alt="Wigo Dashboard"
+              layout="responsive"
+              quality={100}
+              height={55}
+              width={70}
+            />
+          </motion.div>
+        </ScrollAnimationWrapper>
+
+        <ScrollAnimationWrapper className="flex justify-center">
 
           <motion.div className="flex flex-col items-start justify-center mr-auto w-full lg:w-9/12" variants={scrollAnimation}>
             <h3 className="text-3xl lg:text-4xl font-medium leading-relaxed text-black-600">
-              We Provide Analytic for Merchant
+              WIGO DASHBOARD
             </h3>
             <p className="my-2 text-black-500">
-              Sebagai mitra Anda, Kami menyediakan dashboard analitik
-              untuk pertumbuhan obyek wisata Anda.
+              Tourism providers and destination managers, we've got you covered! WIGO Dashboard
+              is available on multiple platforms to help improve your operations, inventory
+              management, and sales.
             </p>
             <ul className="text-black-500 self-start list-inside">
-              {features.map((feature, index) => (
+              {features_dashboard.map((feature, index) => (
                 <motion.li
                   className="relative custom-list flex flex-row"
                   custom={{ duration: 2 + index }}
@@ -118,19 +138,6 @@ const Feature = () => {
                 </a>
               </Link>
             </motion.div>
-          </motion.div>
-        </ScrollAnimationWrapper>
-
-        <ScrollAnimationWrapper className="flex w-full justify-end">
-          <motion.div className="h-full w-full p-4" variants={scrollAnimation}>
-            <Image
-              src="/assets/wigo_dashboard.png"
-              alt="Wigo Dashboard"
-              layout="responsive"
-              quality={100}
-              height={55}
-              width={70}
-            />
           </motion.div>
         </ScrollAnimationWrapper>
       </div>

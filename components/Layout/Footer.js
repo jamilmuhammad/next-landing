@@ -1,9 +1,8 @@
 import React from "react";
-import LogoVPN from "../../public/assets/Logo.svg";
-import Facebook from "../../public/assets/Icon/facebook.svg";
-import Twitter from "../../public/assets/Icon/twitter.svg";
+import LinkedIn from "../../public/assets/Icon/linkedin.svg";
 import Instagram from "../../public/assets/Icon/instagram.svg";
-import Image from "next/image";
+import Image from "next/future/image";
+import { Link } from "react-scroll";
 const Footer = () => {
   return (
     <div className="bg-white-300 pt-44 pb-24">
@@ -17,80 +16,47 @@ const Footer = () => {
             alt="Wigo Indonesia"
           />
           <p className="mb-4">
-            <strong className="font-medium">WIGO</strong> <br/>
+            <strong className="font-medium">WIGO</strong> <br />
             Indonesia's 1st tourism-focused marketplace and social media platform. Connect with
             partners nationwide, enjoy unforgettable experiences. Join WIGO now for the best
             travel experiences in Indonesia.
           </p>
           <div className="flex w-full mt-2 mb-8 -mx-2">
-            <div className="mx-2 bg-white-500 rounded-full items-center justify-center flex p-2 shadow-md">
-              <Facebook className="h-6 w-6" />
-            </div>
-            <div className="mx-2 bg-white-500 rounded-full items-center justify-center flex p-2 shadow-md">
-              <Twitter className="h-6 w-6" />
-            </div>
-            <div className="mx-2 bg-white-500 rounded-full items-center justify-center flex p-2 shadow-md">
+            <a href="https://www.linkedin.com/company/wigoindonesia/" className="mx-2 bg-white-500 rounded-full items-center justify-center flex p-2 shadow-md">
+              <LinkedIn className="h-6 w-6" />
+            </a>
+            <a href="https://www.instagram.com/wigoindonesia/" className="mx-2 bg-white-500 rounded-full items-center justify-center flex p-2 shadow-md">
               <Instagram className="h-6 w-6" />
-            </div>
+            </a>
           </div>
           <p className="text-gray-400">©{new Date().getFullYear()} - PT Jelajah Wisata Digital</p>
         </div>
-        <div className=" row-span-2 sm:col-span-2 sm:col-start-7 sm:col-end-9 flex flex-col">
-          <p className="text-black-600 mb-4 font-medium text-lg">Product</p>
+        <div className=" row-span-2 sm:col-span-2 sm:col-start-5 sm:col-end-7 flex flex-col">
+          <p className="text-black-600 mb-4 font-medium text-lg">Company</p>
           <ul className="text-black-500 ">
             <li className="my-2 hover:text-primary-500 cursor-pointer transition-all">
-              Download{" "}
+              <a href="https://wondergo.id/privacy/">
+                User Privacy & Policy
+              </a>
             </li>
             <li className="my-2 hover:text-primary-500 cursor-pointer transition-all">
-              Profile{" "}
-            </li>
-            <li className="my-2 hover:text-primary-500 cursor-pointer transition-all">
-              Locations{" "}
-            </li>
-            <li className="my-2 hover:text-primary-500 cursor-pointer transition-all">
-              Server{" "}
-            </li>
-            <li className="my-2 hover:text-primary-500 cursor-pointer transition-all">
-              Countries{" "}
-            </li>
-            <li className="my-2 hover:text-primary-500 cursor-pointer transition-all">
-              Blog{" "}
+              <a href="https://wondergo.id/terms-and-condition/">
+                User Terms & Condition
+              </a>
             </li>
           </ul>
         </div>
-        <div className="row-span-2 sm:col-span-2 sm:col-start-9 sm:col-end-11 flex flex-col">
-          <p className="text-black-600 mb-4 font-medium text-lg">Engage</p>
-          <ul className="text-black-500">
-            <li className="my-2 hover:text-primary-500 cursor-pointer transition-all">
-              LaslesVPN ?{" "}
-            </li>
-            <li className="my-2 hover:text-primary-500 cursor-pointer transition-all">
-              FAQ{" "}
-            </li>
-            <li className="my-2 hover:text-primary-500 cursor-pointer transition-all">
-              Tutorials{" "}
-            </li>
-            <li className="my-2 hover:text-primary-500 cursor-pointer transition-all">
-              About Us{" "}
-            </li>
-            <li className="my-2 hover:text-primary-500 cursor-pointer transition-all">
-              Privacy Policy{" "}
-            </li>
-            <li className="my-2 hover:text-primary-500 cursor-pointer transition-all">
-              Terms of Service{" "}
-            </li>
-          </ul>
-        </div>
-        <div className="row-span-2 sm:col-span-2 sm:col-start-11 sm:col-end-13 flex flex-col">
-          <p className="text-black-600 mb-4 font-medium text-lg">Earn Money</p>
-          <ul className="text-black-500">
-            <li className="my-2 hover:text-primary-500 cursor-pointer transition-all">
-              Affiliate{" "}
-            </li>
-            <li className="my-2 hover:text-primary-500 cursor-pointer transition-all">
-              Become Partner{" "}
-            </li>
-          </ul>
+        <div className="row-span-6 sm:col-span-2 sm:col-start-7 sm:col-end-9 flex flex-col">
+          <div
+            className=" items-center justify-start sm:w-auto sm:mx-0 space-x-6"
+          >
+            <Link to="/">
+              <Image src="/assets/appstore1.png" width={250} height={150} sizes="(max-width: 768px) 100%, (max-width: 1200px) 50%, 33%" quality={75} alt="Wigo App Store"></Image>
+            </Link>
+            <Link to="/">
+              <Image src="/assets/playstore1.png" width={250} height={150} sizes="(max-width: 768px) 100%, (max-width: 1200px) 50%, 33%" quality={75} alt="Wigo Play Store"></Image>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

@@ -139,6 +139,25 @@ const Header = () => {
               >
                 Testimonial
               </LinkScroll>
+              <LinkScroll
+                activeClass="active"
+                to="nextfeature"
+                spy={true}
+                smooth={true}
+                duration={1000}
+                onSetActive={() => {
+                  setActiveLink("nextfeature");
+                }}
+                className={
+                  "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
+                  (activeLink === "nextfeature"
+                    ? " text-primary-600 animation-active "
+                    : " hover:text-primary-600 ") +
+                  (scrollActive ? " text-black-600 " : " text-black-600 lg:text-gray-400 ")
+                }
+              >
+                Development
+              </LinkScroll>
             </ul>
           </div>
         </nav>

@@ -35,10 +35,10 @@ const Hero = () => {
               variants={scrollAnimation}
             >
               <Link to="/">
-                <Image src="/assets/appstore1.png" width={250} height={150} sizes="(max-width: 768px) 100%, (max-width: 1200px) 50%, 33%" quality={75} alt="Wigo App Store"></Image>
+                <Image src="/assets/appstore1.png" width={200} height={100} sizes="(max-width: 768px) 100%, (max-width: 1200px) 50%, 33%" quality={75} alt="Wigo App Store"></Image>
               </Link>
               <Link to="/">
-                <Image src="/assets/playstore1.png" width={250} height={150} sizes="(max-width: 768px) 100%, (max-width: 1200px) 50%, 33%" quality={75} alt="Wigo Play Store"></Image>
+                <Image src="/assets/playstore1.png" width={200} height={100} sizes="(max-width: 768px) 100%, (max-width: 1200px) 50%, 33%" quality={75} alt="Wigo Play Store"></Image>
               </Link>
             </motion.div>
           </div>

@@ -15,8 +15,7 @@ const Footer = () => {
 
             alt="Wigo Indonesia"
           />
-          <p className="mb-4">
-            <strong className="font-medium">WIGO</strong> <br />
+          <p className="my-4">
             Indonesia's 1st tourism-focused marketplace and social media platform. Connect with
             partners nationwide, enjoy unforgettable experiences. Join WIGO now for the best
             travel experiences in Indonesia.

@@ -15,6 +15,7 @@ const Destination = ({
       city: "Cipayung",
       country: "Jakarta Timur",
       link: "https://wigoapp.page.link/pmdpCnSjN7JH2vNa6",
+      alt: "Taman Mini Indonesia Indah on Wigo",
       description:
         "Experience Indonesia's diverse culture at Taman Mini Indonesia Indah through miniature archipelago, regional pavilions, arts, recreation, and educational facilities",
     },
@@ -24,8 +25,9 @@ const Destination = ({
       city: "Wori",
       country: "Minahasa",
       link: "https://wigoapp.page.link/aQt3feBoXZe9Rama8",
+      alt: "Bunaken National Park on WIGO",
       description:
-        "Taman Nasional Bunaken merupakan salah satu taman laut pertama di Indonesia yang secara resmi didirikan pada tahun 1991.",
+        "Explore the marine ecosystem of Taman Nasional Bunaken, Indonesia's first marine park established in 1991, listed as a UNESCO World Heritage Site in 2005.",
     },
     {
       name: "Ancol",
@@ -33,8 +35,9 @@ const Destination = ({
       city: "Pademangan",
       country: "Jakarta Utara",
       link: "https://wigoapp.page.link/fdJ2P1qC29C891ey6",
+      name: "Ancol on WIGO",
       description:
-        "Taman Impian Jaya Ancol atau sering pula disebut sebagai Ancol Dreamland adalah salah satu lokasi wisata yang terletak di kawasan Jakarta Utara.",
+        "Discover Ancol Dreamland, a popular family-friendly tourist destination in North Jakarta, known for its various exciting rides and attractions.",
     },
     {
       name: "Ragunan",
@@ -42,8 +45,9 @@ const Destination = ({
       city: "Ps. Minggu",
       country: "Jakarta Selatan",
       link: "https://wigoapp.page.link/DJYRt4Txtejsa1ZZ6",
+      alt: "Ragunan on WIGO",
       description:
-        "Ragunan dikenal karena Kebun Binatang Ragunan, yaitu taman hutan hujan besar dengan pusat primata, gajah, dan harimau Sumatra, serta jalan setapak teduh yang populer di kalangan para pelari.",
+        "Ragunan is famous for its zoo, large rainforest park with primates, elephants, Sumatran tigers, and a popular shady trail for runners.",
     },
     {
       name: "Labuan Bajo",
@@ -51,8 +55,9 @@ const Destination = ({
       city: "Komodo",
       country: "Manggarai Barat",
       link: "https://wigoapp.page.link/YQ72GbTEuhbHK2ZQ8",
+      alt: "Labuan Bajo on WIGO",
       description:
-        "Pantai Pink Labuan Bajo adalah salah satu pesona bahari Indonesia yang terdapat di beberapa tempat. Pantai ini unik karena warna pasir pantai yang jarang ditemukan di pantai-pantai lainnya. Salah satu yang paling terkenal adalah pantai pink Lombok.",
+        "Labuan Bajo's Pink Beach is a unique Indonesian attraction with rare pink sand, found in only a few locations, including the famous Pink Beach in Lombok.",
     },
   ],
 }) => {
@@ -70,6 +75,7 @@ const Destination = ({
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
+    adaptiveHeight: true,
     responsive: [
       {
         breakpoint: 770,
@@ -96,20 +102,22 @@ const Destination = ({
         {...settings}
         arrows={false}
         ref={setSliderRef}
-        className="flex items-stretch justify-items-stretch"
+        className="flex "
       >
         {listDestination.map((listDestinations, index) => (
-          <Link to={listDestinations.link} key={index}>
-            <div className="px-3 flex items-stretch">
-              <div className="border-2 border-gray-500 hover:border-primary-500 transition-all rounded-lg p-8 flex flex-col">
-                <div className="flex flex-col xl:flex-row w-full items-stretch xl:items-center">
+          <div className="px-3 col-span-1 flex-1 h-[25rem]" key={index}>
+            <a href={listDestinations.link}>
+              <div className="border-2 border-gray-500 hover:border-primary-500 transition-all rounded-lg p-8 block overflow-hidden h-full">
+                <div className="flex flex-col xl:flex-row w-full xl:items-center">
                   <div className="flex order-2 xl:order-1">
                     <div className="flex flex-col text-left">
                       <Image
                         src={listDestinations.image}
+                        quality={100}
                         height={250}
                         width={250}
-                        alt="Icon People"
+                        className="object-cover h-24 w-25"
+                        alt={listDestinations.alt}
                       />
                       <p className="text-lg text-black-600 capitalize">
                         {listDestinations.name}
@@ -128,8 +136,8 @@ const Destination = ({
                 </div>
                 <p className="mt-5 text-left">{listDestinations.description}</p>
               </div>
-            </div>
-          </Link>
+            </a>
+          </div>
         ))}
       </Slider>
       <div className="flex w-full items-center justify-end">

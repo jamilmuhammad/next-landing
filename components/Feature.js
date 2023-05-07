@@ -33,6 +33,7 @@ const Feature = () => {
               alt="Wigo App"
               layout="responsive"
               quality={100}
+              sizes="75%"
               height={55}
               width={41}
             />
@@ -51,7 +52,7 @@ const Feature = () => {
             <ul className="text-black-500 self-start list-inside">
               {features_app.map((feature, index) => (
                 <motion.li
-                  className="relative custom-list flex flex-row"
+                  className="relative custom-list flex flex-row py-2"
                   custom={{ duration: 2 + index }}
                   variants={scrollAnimation}
                   key={feature}
@@ -110,7 +111,7 @@ const Feature = () => {
             <ul className="text-black-500 self-start list-inside">
               {features_dashboard.map((feature, index) => (
                 <motion.li
-                  className="relative custom-list flex flex-row"
+                  className="relative custom-list flex flex-row py-2"
                   custom={{ duration: 2 + index }}
                   variants={scrollAnimation}
                   key={feature}

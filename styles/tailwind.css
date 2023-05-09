@@ -11,6 +11,7 @@
 
 html {
   font-family: "Rubik", sans-serif;
+  scroll-behavior: smooth;
 }
 body {
   @apply bg-white-500;

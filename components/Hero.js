@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
 import Button, { BUTTON_TYPE_CLASS } from "./misc/Button";
-import { Link } from "react-scroll";
+import Link from "next/link";
 
 const Hero = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
@@ -34,11 +34,11 @@ const Hero = () => {
               custom={{ duration: 2 }}
               variants={scrollAnimation}
             >
-              <Link to="/">
-                <Image src="/assets/appstore1.png" width={200} height={100} sizes="(max-width: 768px) 100%, (max-width: 1200px) 50%, 33%" quality={75} alt="Wigo App Store"></Image>
+              <Link href="https://apps.apple.com/app/wigo/id1607730751">
+                <a><Image src="/assets/appstore1.png" width={200} height={100} sizes="(max-width: 768px) 100%, (max-width: 1200px) 50%, 33%" quality={75} alt="Wigo App Store"></Image></a>
               </Link>
-              <Link to="/">
-                <Image src="/assets/playstore1.png" width={200} height={100} sizes="(max-width: 768px) 100%, (max-width: 1200px) 50%, 33%" quality={75} alt="Wigo Play Store"></Image>
+              <Link href="https://play.google.com/store/apps/details?id=id.wigo.app">
+                <a><Image src="/assets/playstore1.png" width={200} height={100} sizes="(max-width: 768px) 100%, (max-width: 1200px) 50%, 33%" quality={75} alt="Wigo Play Store"></Image></a>
               </Link>
             </motion.div>
           </div>

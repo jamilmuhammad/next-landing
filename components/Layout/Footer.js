@@ -2,7 +2,7 @@ import React from "react";
 import LinkedIn from "../../public/assets/Icon/linkedin.svg";
 import Instagram from "../../public/assets/Icon/instagram.svg";
 import Image from "next/future/image";
-import { Link } from "react-scroll";
+import Link from "next/link";
 const Footer = () => {
   return (
     <div className="bg-white-300 pt-44 pb-24">
@@ -49,12 +49,12 @@ const Footer = () => {
           <div
             className=" items-center justify-start sm:w-auto sm:mx-0 space-x-6"
           >
-            <Link to="/">
-              <Image src="/assets/appstore1.png" width={250} height={150} sizes="(max-width: 768px) 100%, (max-width: 1200px) 50%, 33%" quality={75} alt="Wigo App Store"></Image>
-            </Link>
-            <Link to="/">
-              <Image src="/assets/playstore1.png" width={250} height={150} sizes="(max-width: 768px) 100%, (max-width: 1200px) 50%, 33%" quality={75} alt="Wigo Play Store"></Image>
-            </Link>
+            <Link href="https://apps.apple.com/app/wigo/id1607730751">
+                <a><Image src="/assets/appstore1.png" width={250} height={100} sizes="(max-width: 768px) 100%, (max-width: 1200px) 50%, 33%" quality={75} alt="Wigo App Store"></Image></a>
+              </Link>
+              <Link href="https://play.google.com/store/apps/details?id=id.wigo.app">
+                <a><Image src="/assets/playstore1.png" width={250} height={100} sizes="(max-width: 768px) 100%, (max-width: 1200px) 50%, 33%" quality={75} alt="Wigo Play Store"></Image></a>
+              </Link>
           </div>
         </div>
       </div>

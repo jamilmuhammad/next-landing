@@ -35,7 +35,7 @@ const Destination = ({
       city: "Pademangan",
       country: "Jakarta Utara",
       link: "https://wigoapp.page.link/fdJ2P1qC29C891ey6",
-      name: "Ancol on WIGO",
+      alt: "Ancol on WIGO",
       description:
         "Discover Ancol Dreamland, a popular family-friendly tourist destination in North Jakarta, known for its various exciting rides and attractions.",
     },
@@ -105,9 +105,9 @@ const Destination = ({
         className="flex "
       >
         {listDestination.map((listDestinations, index) => (
-          <div className="px-3 col-span-1 flex-1 h-[25rem]" key={index}>
+          <div className="px-3 col-span-1 flex-1 h-96" key={index}>
             <a href={listDestinations.link}>
-              <div className="border-2 border-gray-500 hover:border-primary-500 transition-all rounded-lg p-8 block overflow-hidden h-full">
+              <div className="border-2 border-gray-500 hover:border-primary-500 transition-all rounded-lg p-8 block overflow-hidden h-full text-left">
                 <div className="flex flex-col xl:flex-row w-full xl:items-center">
                   <div className="flex order-2 xl:order-1">
                     <div className="flex flex-col text-left">
@@ -134,7 +134,7 @@ const Destination = ({
                     </div>
                   </div>
                 </div>
-                <p className="mt-5 text-left">{listDestinations.description}</p>
+                <p>{listDestinations.description}</p>
               </div>
             </a>
           </div>

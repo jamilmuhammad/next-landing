@@ -5,6 +5,7 @@ module.exports = {
     "./components/*.js",
     "./components/**/*.js",
   ],
+  darkMode: 'class',
   theme: {
     boxShadow: {
       sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
@@ -28,6 +29,9 @@ module.exports = {
       black: {
         500: "#4F5665",
         600: "#0B132A",
+      },
+      yellow: {
+        500: "#eab208",
       },
       orange: {
         100: "#FFECEC",

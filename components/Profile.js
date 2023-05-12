@@ -11,7 +11,7 @@ const Profile = () => {
 
   return (
     <div
-      className="bg-gradient-to-b from-white-300 to-white-500 w-full py-14"
+      className="bg-gradient-to-b from-white-300 to-white-500 dark:from-black-600 dark:to-black-600 w-full py-14"
       id="profile"
     >
       <div className="max-w-screen-lg  px-6 sm:px-8 lg:px-16 mx-auto flex flex-col w-full text-center justify-center">
@@ -20,7 +20,7 @@ const Profile = () => {
             <motion.div className="grid my-6">
               <motion.h3
                 variants={scrollAnimation}
-                className="text-2xl sm:text-3xl lg:text-4xl font-medium text-black-600 leading-relaxed"
+                className="text-2xl sm:text-3xl lg:text-4xl font-medium text-black-600 dark:text-white-500 leading-relaxed"
               >
                 Connecting The World Tourism by <span className="underline underline-offset-[3px] relative text-primary-600">WIGO</span>
               </motion.h3>
@@ -40,12 +40,12 @@ const Profile = () => {
             </motion.div>
           </ScrollAnimationWrapper>
         </div>
-        <div className="flex flex-col w-full pt-12" id="testimoni">
+        <div className="flex flex-col w-full pt-12" id="tourism">
           <ScrollAnimationWrapper className="w-full flex flex-col py-6">
             <motion.div variants={scrollAnimation}>
               <motion.h3
                 variants={scrollAnimation}
-                className="text-2xl sm:text-3xl lg:text-4xl font-medium text-black-600 leading-relaxed"
+                className="text-2xl sm:text-3xl lg:text-4xl font-medium text-black-600 dark:text-white-500 leading-relaxed"
               >
                 Now available on <span className="underline underline-offset-[3px] relative text-primary-600">WIGO</span>
               </motion.h3>
@@ -62,23 +62,23 @@ const Profile = () => {
             <motion.div variants={scrollAnimation}>
               <motion.h3
                 variants={scrollAnimation}
-                className="text-2xl sm:text-3xl lg:text-4xl font-medium text-black-600 leading-relaxed"
+                className="text-2xl sm:text-3xl lg:text-4xl font-medium text-black-600 dark:text-white-500 leading-relaxed"
               >
                 Our future development in <span className="underline underline-offset-[3px] relative text-primary-600">WIGO</span>
               </motion.h3>
             </motion.div>
           </ScrollAnimationWrapper>
           <ScrollAnimationWrapper className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-[30px]">
-            <motion.div className="p-6 hover:shadow-xl hover:shadow-gray-100 dark:hover:shadow-gray-800 transition duration-500 rounded-2xl mt-6 text-center">
-              <div className="w-20 h-20 bg-primary-600/5 text-primary-600 rounded-xl text-3xl flex align-middle justify-center items-center shadow-sm dark:shadow-gray-800 mx-auto">
+            <motion.div className="p-6 hover:shadow-xl hover:shadow-gray-100 dark:hover:shadow-gray-400 transition duration-500 rounded-2xl mt-6 text-center">
+              <div className="w-20 h-20 bg-primary-600/5 text-primary-600 rounded-xl text-3xl flex align-middle justify-center items-center shadow-sm dark:shadow-gray-400 mx-auto">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                 </svg>
               </div>
 
               <div className="content mt-7">
-                <a href="/" className="title h5 text-lg font-medium hover:text-primary-600">Object Scanning</a>
-                <p className="text-slate-400 mt-3">Experience easy 3D object viewing with Augmented Reality technology</p>
+                <a href="/" className="title h5 text-lg font-medium hover:text-primary-600 dark:text-white-500">Object Scanning</a>
+                <p className=" mt-3">Experience easy 3D object viewing with Augmented Reality technology</p>
 
                 <div className="mt-5">
                   <a href="/" className="btn btn-link text-primary-600 hover:text-primary-600 after:bg-primary-600 duration-500 ease-in-out">Read More <i className="uil uil-arrow-right"></i></a>
@@ -86,15 +86,15 @@ const Profile = () => {
               </div>
             </motion.div>
 
-            <motion.div className="p-6 shadow-xl shadow-gray-100 dark:shadow-gray-800 transition duration-500 rounded-2xl mt-6 text-center">
-              <div className="w-20 h-20 bg-primary-600/5 text-primary-600 rounded-xl text-3xl flex align-middle justify-center items-center shadow-sm dark:shadow-gray-800 mx-auto">
+            <motion.div className="p-6 shadow-xl shadow-gray-100 dark:shadow-gray-400 transition duration-500 rounded-2xl mt-6 text-center">
+              <div className="w-20 h-20 bg-primary-600/5 text-primary-600 rounded-xl text-3xl flex align-middle justify-center items-center shadow-sm dark:shadow-gray-400 mx-auto">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                   <path strokeLinecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
                 </svg>
               </div>
 
               <div className="content mt-7">
-                <a href="page-services.html" className="title h5 text-lg font-medium hover:text-primary-600">Inside Virtual Tour</a>
+                <a href="page-services.html" className="title h5 text-lg font-medium dark:text-white-500 hover:text-primary-600">Inside Virtual Tour</a>
                 <p className="text-slate-400 mt-3">Explore a new dimension of tourism with Virtual Reality technology</p>
 
                 <div className="mt-5">
@@ -103,15 +103,15 @@ const Profile = () => {
               </div>
             </motion.div>
 
-            <motion.div className="p-6 hover:shadow-xl hover:shadow-gray-100 dark:hover:shadow-gray-800 transition duration-500 rounded-2xl mt-6 text-center">
-              <div className="w-20 h-20 bg-primary-600/5 text-primary-600 rounded-xl text-3xl flex align-middle justify-center items-center shadow-sm dark:shadow-gray-800 mx-auto">
+            <motion.div className="p-6 hover:shadow-xl hover:shadow-gray-100 dark:hover:shadow-gray-400 transition duration-500 rounded-2xl mt-6 text-center">
+              <div className="w-20 h-20 bg-primary-600/5 text-primary-600 rounded-xl text-3xl flex align-middle justify-center items-center shadow-sm dark:shadow-gray-400 mx-auto">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
                 </svg>
               </div>
 
               <div className="content mt-7">
-                <a href="page-services.html" className="title h5 text-lg font-medium hover:text-primary-600">Automate Security System</a>
+                <a href="page-services.html" className="title h5 text-lg font-medium dark:text-white-500 hover:text-primary-600">Automate Security System</a>
                 <p className="text-slate-400 mt-3">Automate your security with our advanced system</p>
 
                 <div className="mt-5">
@@ -122,12 +122,12 @@ const Profile = () => {
           </ScrollAnimationWrapper>
           <ScrollAnimationWrapper className="relative w-full my-10">
             <motion.div variants={scrollAnimation} custom={{ duration: 3 }}>
-              <div className="absolute rounded-xl  py-4 sm:py-10 px-6 sm:px-12 lg:px-16 w-full flex flex-col sm:flex-row justify-between items-center z-10 bg-white-500">
+              <div className="absolute rounded-xl  py-4 sm:py-10 px-6 sm:px-12 lg:px-16 w-full flex flex-col sm:flex-row justify-between items-center z-10 bg-white-500 dark:text-white-500 dark:bg-black-500">
                 <div className="flex flex-col text-left w-10/12 sm:w-7/12 lg:w-5/12 mb-6 sm:mb-0">
-                  <h5 className="text-black-600 text-xl sm:text-2xl lg:text-3xl leading-relaxed font-medium">
+                  <h5 className="text-black-600 dark:text-white-500 text-xl sm:text-2xl lg:text-3xl leading-relaxed font-medium">
                     Have Question? <br /> Get in touch!
                   </h5>
-                  <p>If you have any questions or inquiries, please do not hesitate to contact us!</p>
+                  <p className="dark:text-white-300">If you have any questions or inquiries, please do not hesitate to contact us!</p>
                 </div>
                 <Link href="mailto:hello@wondergo.id">
                   <a>

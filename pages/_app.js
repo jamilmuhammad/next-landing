@@ -1,6 +1,6 @@
 import "../styles/tailwind.css";
 import "../styles/slick.css";
-import { GlobalContextProvider } from "../contexts/GLobalState";
+import { GlobalContextProvider } from "../contexts/GlobalContext";
 
 function MyApp({ Component, pageProps }) {
   return (

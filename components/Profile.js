@@ -22,7 +22,7 @@ const Profile = () => {
                 variants={scrollAnimation}
                 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-black-600 dark:text-white-500 leading-relaxed"
               >
-                Connecting The World Tourism by <span className="underline underline-offset-[3px] relative text-primary-600">WIGO</span>
+                Connecting The World Tourism by <span className="underline underline-offset-2 relative text-primary-600">WIGO</span>
               </motion.h3>
             </motion.div>
             <motion.div className="relative overflow-hidden rounded-lg shadow-md dark:shadow-gray-800">
@@ -47,7 +47,7 @@ const Profile = () => {
                 variants={scrollAnimation}
                 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-black-600 dark:text-white-500 leading-relaxed"
               >
-                Now available on <span className="underline underline-offset-[3px] relative text-primary-600">WIGO</span>
+                Now available on <span className="underline underline-offset-2 relative text-primary-600">WIGO</span>
               </motion.h3>
             </motion.div>
           </ScrollAnimationWrapper>
@@ -64,11 +64,11 @@ const Profile = () => {
                 variants={scrollAnimation}
                 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-black-600 dark:text-white-500 leading-relaxed"
               >
-                Our future development in <span className="underline underline-offset-[3px] relative text-primary-600">WIGO</span>
+                Our future development in <span className="underline underline-offset-2 relative text-primary-600">WIGO</span>
               </motion.h3>
             </motion.div>
           </ScrollAnimationWrapper>
-          <ScrollAnimationWrapper className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-[30px]">
+          <ScrollAnimationWrapper className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-8">
             <motion.div className="p-6 hover:shadow-xl hover:shadow-gray-100 dark:hover:shadow-gray-400 transition duration-500 rounded-2xl mt-6 text-center">
               <div className="w-20 h-20 bg-primary-600/5 text-primary-600 rounded-xl text-3xl flex align-middle justify-center items-center shadow-sm dark:shadow-gray-400 mx-auto">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

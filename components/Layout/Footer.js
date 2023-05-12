@@ -37,7 +37,7 @@ const Footer = () => {
           <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
         </svg>
       </a>
-      <div className="fixed top-[30%] -right-2 z-50">
+      <div className="fixed top-60 -right-2 z-50">
         <span className="relative inline-block rotate-90">
           <input type="checkbox" checked={darkMode} readOnly className=" checkbox opacity-0 absolute" id="chk" />
           <label onClick={changeTheme} className={" label bg-black-500 dark:bg-white-300 shadow dark:shadow-gray-800 cursor-pointer rounded-full flex justify-between items-center p-1 w-14 h-8"}>

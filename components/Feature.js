@@ -22,7 +22,7 @@ const Feature = () => {
 
   return (
     <div
-      className="max-w-screen-xl mt-8 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto"
+      className="max-w-screen-xl mt-8 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto dark:bg-black-500 rounded-lg"
       id="feature"
     >
       <div className="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-2 gap-8 p  y-8 my-12">
@@ -42,14 +42,14 @@ const Feature = () => {
         <ScrollAnimationWrapper className="flex justify-center">
 
           <motion.div className="flex flex-col items-start justify-center mr-auto w-full lg:w-9/12" variants={scrollAnimation}>
-            <h3 className="text-3xl lg:text-4xl font-medium leading-relaxed text-black-600">
+            <h3 className="text-3xl lg:text-4xl font-medium leading-relaxed text-black-600 dark:text-white-500">
               WIGO APP
             </h3>
-            <p className="my-2 text-black-500">
+            <p className="my-2 text-black-500 dark:text-white-500">
               Discover destinations, activities, accommodations, and dining options worldwide with
               ease! Our interactive maps and guides make traveling a breeze.
             </p>
-            <ul className="text-black-500 self-start list-inside">
+            <ul className="text-black-500 dark:text-white-500 self-start list-inside">
               {features_app.map((feature, index) => (
                 <motion.li
                   className="relative custom-list flex flex-row py-2"
@@ -100,15 +100,15 @@ const Feature = () => {
         <ScrollAnimationWrapper className="flex justify-center order-2 md:order-1">
 
           <motion.div className="flex flex-col items-start justify-center mr-auto w-full lg:w-9/12" variants={scrollAnimation}>
-            <h3 className="text-3xl lg:text-4xl font-medium leading-relaxed text-black-600">
+            <h3 className="text-3xl lg:text-4xl font-medium leading-relaxed text-black-600 dark:text-white-500">
               WIGO DASHBOARD
             </h3>
-            <p className="my-2 text-black-500">
+            <p className="my-2 text-black-500 dark:text-white-500">
               Tourism providers and destination managers, we've got you covered! WIGO Dashboard
               is available on multiple platforms to help improve your operations, inventory
               management, and sales.
             </p>
-            <ul className="text-black-500 self-start list-inside">
+            <ul className="text-black-500 dark:text-white-500 self-start list-inside">
               {features_dashboard.map((feature, index) => (
                 <motion.li
                   className="relative custom-list flex flex-row py-2"

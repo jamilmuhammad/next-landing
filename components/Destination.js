@@ -119,22 +119,22 @@ const Destination = ({
                         className="object-cover h-24 w-25"
                         alt={listDestinations.alt}
                       />
-                      <p className="text-lg text-black-600 capitalize">
+                      <p className="text-lg text-black-600 dark:text-white-500 capitalize">
                         {listDestinations.name}
                       </p>
                       <span className="waves-effect waves-light flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 stroke-primary-500">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                         </svg>
-                        <p className="text-sm text-black-500 capitalize inline-block">
+                        <p className="text-sm text-black-500 dark:text-white-500 capitalize inline-block">
                           {listDestinations.city},{listDestinations.country}
                         </p>
                       </span>
                     </div>
                   </div>
                 </div>
-                <p>{listDestinations.description}</p>
+                <p className="dark:text-white-300">{listDestinations.description}</p>
               </div>
             </a>
           </div>
